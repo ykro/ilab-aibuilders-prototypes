@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #f5f5f5; stroke: #d8d8d8; stroke-width: 1px; }
+      .plate-rule { stroke: rgba(45, 49, 66, 0.12); stroke-width: 1px; }
+      .title { font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif; font-size: 24px; fill: #2d3142; }
+      .subtitle { font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; fill: #4f5d75; }
+      .mono-tag { font-family: 'Geist Mono', 'JetBrains Mono', 'SFMono-Regular', monospace; font-size: 10px; fill: #8d99ae; letter-spacing: 0.08em; text-transform: uppercase; }
+      .mono-accent { font-family: 'Geist Mono', 'JetBrains Mono', 'SFMono-Regular', monospace; font-size: 10px; fill: #eb6c36; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+      .node { fill: #ffffff; stroke: rgba(45, 49, 66, 0.16); stroke-width: 1px; }
+      .node-secondary { fill: #ececec; stroke: rgba(45, 49, 66, 0.14); stroke-width: 1px; }
+      .node-focal { fill: #fdf3ef; stroke: #eb6c36; stroke-width: 1.5px; }
+      .node-title { font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; font-weight: 600; fill: #2d3142; }
+      .node-body { font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11.5px; fill: #4f5d75; }
+      .node-code { font-family: 'Geist Mono', 'JetBrains Mono', monospace; font-size: 10.5px; fill: #2d3142; }
+      .connector { stroke: #8d99ae; stroke-width: 1px; fill: none; }
+      .connector-focal { stroke: #eb6c36; stroke-width: 1.25px; fill: none; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#8d99ae"/>
+    </marker>
+    <marker id="arrow-focal" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#eb6c36"/>
+    </marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="959" height="439" rx="8" class="bg"/>
+
+  <!-- Header -->
+  <text x="40" y="42" class="mono-tag">LAMINA 02 · PATRON DE INTERACCION Y DESACOPLE DE VISTAS</text>
+  <text x="40" y="70" class="title">Separacion Estricta entre Captura (Input) y Tablero de Decision (Output)</text>
+  <text x="40" y="90" class="subtitle">Flujo secuencial sin saturacion visual: captura guiada → procesamiento hibrido → recomendacion accionable</text>
+  <line x1="40" y1="106" x2="920" y2="106" class="plate-rule"/>
+
+  <!-- Step 1: Input View -->
+  <rect x="40" y="140" width="250" height="220" rx="6" class="node"/>
+  <text x="58" y="166" class="mono-tag">PANTALLA 01 · CAPTURA LIMPIA</text>
+  <text x="58" y="190" class="node-title">Entrada de Datos sin Ruido</text>
+  <text x="58" y="216" class="node-body">• PreConsulta: Dictado de voz o texto</text>
+  <text x="58" y="234" class="node-body">  y 1–3 preguntas ("Ayudame con mas</text>
+  <text x="58" y="250" class="node-body">  informacion").</text>
+  <text x="58" y="274" class="node-body">• Estabilizador: Selector Modo Mes /</text>
+  <text x="58" y="290" class="node-body">  Modo Semana con ingresos en Q y $.</text>
+  <text x="58" y="314" class="node-body">• Estados de Cuenta: Carga de 1 a 3+</text>
+  <text x="58" y="330" class="node-body">  archivos PDF bancarios.</text>
+
+  <!-- Step 2: Processing Engine (Focal) -->
+  <rect x="355" y="140" width="250" height="220" rx="6" class="node-focal"/>
+  <text x="373" y="166" class="mono-accent">ETAPA 02 · PROCESAMIENTO</text>
+  <text x="373" y="190" class="node-title">Motor Hibrido Bimonetario</text>
+  <text x="373" y="216" class="node-body">1. Extraccion determinista local</text>
+  <text x="373" y="232" class="node-body">   (descompresion PDF FlateDecode,</text>
+  <text x="373" y="248" class="node-body">   calculo estadistico de temporadas).</text>
+  <text x="373" y="274" class="node-body">2. Inferencia estructurada con</text>
+  <text x="373" y="290" class="node-body">   Gemini 3.8 Flash bajo esquema</text>
+  <text x="373" y="306" class="node-body">   JSON validado.</text>
+  <text x="373" y="334" class="node-code">Simultaneo: GTQ (Q) + USD ($)</text>
+
+  <!-- Step 3: Output View -->
+  <rect x="670" y="140" width="250" height="220" rx="6" class="node"/>
+  <text x="688" y="166" class="mono-tag">PANTALLA 02 · RESULTADO EJECUTIVO</text>
+  <text x="688" y="190" class="node-title">Informacion para Decidir</text>
+  <text x="688" y="216" class="node-body">• PreConsulta: Banner prioritario de</text>
+  <text x="688" y="232" class="node-body">  urgencia + Nota SOAP médica.</text>
+  <text x="688" y="256" class="node-body">• Estabilizador: Cuanto apartar cada</text>
+  <text x="688" y="272" class="node-body">  semana + grafica Real vs Estabilizado</text>
+  <text x="688" y="288" class="node-body">  con simulador (-50% a +50%).</text>
+  <text x="688" y="312" class="node-body">• Estados de Cuenta: Tendencias a 3</text>
+  <text x="688" y="328" class="node-body">  meses y decisiones cuantificadas.</text>
+
+  <!-- Connectors -->
+  <path d="M 290 250 L 355 250" class="connector-focal" marker-end="url(#arrow-focal)"/>
+  <path d="M 605 250 L 670 250" class="connector-focal" marker-end="url(#arrow-focal)"/>
+
+  <!-- Footer -->
+  <line x1="40" y1="396" x2="920" y2="396" class="plate-rule"/>
+  <text x="40" y="416" class="mono-tag">FLUJO DE INTERFAZ DE PRODUCCION · SIN ELEMENTOS TECNICOS EXPUESTOS</text>
+  <text x="920" y="416" text-anchor="end" class="mono-tag">ESCALA DE DENSIDAD 4/10</text>
+</svg>
